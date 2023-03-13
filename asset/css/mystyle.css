@@ -1,0 +1,55 @@
+/* color hunt color link https: //colorhunt.co/palette/7286d38ea7e9e5e0fffff2f2 */
+
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+* {
+    font-family: 'Viga', sans-serif;
+}
+
+.c-primary {
+    background-color: #7286D3;
+}
+
+.c-active {
+    background-color: #FFF2F2;
+}
+
+.c-second {
+    background-color: #8EA7E9;
+}
+
+.c-third {
+    background-color: #E5E0FF;
+}
+
+.c-last {
+    background-color: #FFF2F2;
+}
+
+.sidebar-button {
+    padding-left: 30px;
+    border-radius: 12px 0 0 12px;
+    -moz-border-radius: 12px 0 0 12px;
+    -ms-border-radius: 12px 0 0 12px;
+    -o-border-radius: 12px 0 0 12px;
+    -webkit-border-radius: 12px 0 0 12px;
+}
+
+.sidebar-button:hover {
+    background-color: #8EA7E9;
+    padding-left: 50px;
+    transition: ease-in-out 0.2s;
+    -webkit-transition: ease-in-out 0.2s;
+    -moz-transition: ease-in-out 0.2s;
+    -ms-transition: ease-in-out 0.2s;
+    -o-transition: ease-in-out 0.2s;
+}
+
+.btn:hover {
+    background-color: #E5E0FF;
+}
