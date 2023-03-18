@@ -4,28 +4,46 @@
         <p class="fs-2">Ini Catatan Mengajar harian mu!</p>
     </div>
     <div class="col">
-        <p class="fs-6">Jadwal hari ini!</p>
+        <!-- form search -->
+        <form action="<?php echo site_url('admin/jurnal') ?>" method="post">
+            <div class="row g-3 align-items-center mb-3">
+                <div class="col-auto">
+                    <label for="inputPassword6" class="col-form-label">Cari Jadwal Guru</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="inputSearch" class="form-control" name="search" aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Cari</button>
+                </div>
+            </div>
+        </form>
+        <!-- endform search -->
         <div class="row">
             <table class="table">
                 <thead class="c-third">
                     <tr>
                         <th class="col-1">No</th>
                         <th class="col-2">Tanggal</th>
-                        <th class="col-2">Kelas</th>
+                        <th class="col-2">Nama</th>
+                        <th class="col-1">Kelas</th>
                         <th class="col-4">Jurnal</th>
-                        <th class="col-3">Aksi</th>
+                        <th class="col-2">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>28 Feb 2022</td>
-                        <td>9A</td>
-                        <td>Anatomu tubuh</td>
-                        <td>
-                            <a href="#" class="btn c-second" data-bs-toggle="modal" data-bs-target="#exampleModal">Jurnal</a>
-                        </td>
-                    </tr>
+                    <?php foreach ($jurnal as $key) : ?>
+                        <tr>
+                            <td>1</td>
+                            <td><?php echo $key['tanggal'] ?></td>
+                            <td><?php echo $key['nama'] ?></td>
+                            <td><?php echo $key['kelas'] ?></td>
+                            <td><?php echo $key['catatan'] ?></td>
+                            <td>
+                                <a href="#" class="btn c-second" data-bs-toggle="modal" data-bs-target="#exampleModal">Jurnal</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
 

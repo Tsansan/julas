@@ -25,6 +25,7 @@ class Loginadmin extends CI_Controller
   {
     parent::__construct();
     $this->load->library('form_validation');
+    $this->load->model('Login_model', 'login');
   }
 
   public function index()
@@ -56,7 +57,7 @@ class Loginadmin extends CI_Controller
     $password = $this->input->post('password');
 
     if ($this->form_validation->run() == FALSE) {
-      $this->load->view('loginuser');
+      $this->load->view('loginadmin');
     } else {
       $this->login($username, $password);
     }
@@ -68,7 +69,7 @@ class Loginadmin extends CI_Controller
     $this->session->set_userdata($check);
     if (!$check || $check == false) {
       $this->session->set_flashdata('failedlogin', 'Username atau password salah');
-      redirect('login');
+      redirect('loginadmin');
     }
     redirect("admin");
   }

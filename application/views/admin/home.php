@@ -1,7 +1,7 @@
 <!-- Main -->
 <div class="col container pt-4">
     <div class="col">
-        <p class="fs-2">Hallo, Selamat pagi User</p>
+        <p class="fs-2">Hallo, Selamat pagi admin</p>
     </div>
     <div class="col">
         <p class="fs-6">Jurnal Guru Hari ini</p>

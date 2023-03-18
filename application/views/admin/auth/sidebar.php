@@ -1,8 +1,9 @@
 <!-- Sidebar -->
 <div class="col-2 c-primary pt-5 px-0">
     <div class="sidebar-button col py-2 <?php echo $retVal = ($this->uri->segment(2) == "" || $this->uri->segment(1) == "home") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("admin") ?>">Dashboard</a></div>
-    <div class="sidebar-button col py-2 <?php echo $retVal = ($this->uri->segment(2) == "jurnal") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("admin/jurnal") ?>">Jurnal</a> </div>
     <div class="sidebar-button col py-2  <?php echo $retVal = ($this->uri->segment(2) == "jadwal") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("admin/jadwal") ?>"> Jadwal</a></div>
+    <div class="sidebar-button col py-2  <?php echo $retVal = ($this->uri->segment(2) == "guru") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("admin/guru") ?>"> Guru</a></div>
+    <div class="sidebar-button col py-2 <?php echo $retVal = ($this->uri->segment(2) == "jurnal") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("admin/jurnal") ?>">Jurnal</a> </div>
     <div class="sidebar-button col py-2"><a href="#" data-bs-toggle="modal" data-bs-target="#Logoutmodal">Log out</a></div>
 
     <!-- Logout Modal -->
