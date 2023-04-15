@@ -49,3 +49,24 @@ a {
     -ms-transition: ease-in-out 0.2s;
     -o-transition: ease-in-out 0.2s;
 }
+
+@media only screen and (max-width: 600px) {
+    .sidebar-button {
+        padding-left: 30px;
+        border-radius: 12px 0 0 12px;
+        -moz-border-radius: 12px 0 0 12px;
+        -ms-border-radius: 12px 0 0 12px;
+        -o-border-radius: 12px 0 0 12px;
+        -webkit-border-radius: 12px 0 0 12px;
+    }
+
+    .sidebar-button:hover {
+        background-color: #8EA7E9;
+        padding-left: 35px;
+        transition: ease-in-out 0.2s;
+        -webkit-transition: ease-in-out 0.2s;
+        -moz-transition: ease-in-out 0.2s;
+        -ms-transition: ease-in-out 0.2s;
+        -o-transition: ease-in-out 0.2s;
+    }
+}

@@ -20,6 +20,8 @@
                         <?php
                         if (!$this->session->flashdata('failedlogin')) {
                             echo "<h6 class='card-subtitle mb-2 text-muted mb-2 fw-danger'>Masukan username & password </h6>";
+                        } elseif ($this->session->flashdata('message')) {
+                            echo $this->session->flashdata('message');
                         } else {
                             echo "<h6 class='card-subtitle mb-2 text-muted mb-2'>" . $this->session->flashdata('failedlogin') . "</h6>";
                         }
@@ -38,10 +40,6 @@
                             <div class="text-danger">
                                 <?php echo form_error('password'); ?>
                             </div>
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>

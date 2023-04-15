@@ -34,9 +34,9 @@ class Loginadmin extends CI_Controller
     // userdata from session check
     $user = $this->session->userdata('uname');
     $pword = $this->session->userdata('pword');
-    $userdata = $this->Login_model->checkdata($user, $pword);
     // check user data in database
-    if ($userdata) {
+    if ($user && $pword) {
+      $userdata = $this->Login_model->checkdata($user, $pword);
       redirect("admin");
     }
 
@@ -66,12 +66,27 @@ class Loginadmin extends CI_Controller
   public function login($username, $password)
   {
     $check = $this->login->checkdata($username, $password);
-    $this->session->set_userdata($check);
-    if (!$check || $check == false) {
+
+    if ($check == null) {
       $this->session->set_flashdata('failedlogin', 'Username atau password salah');
       redirect('loginadmin');
+    } else {
+      if ($check['Level'] != 1) {
+        $this->session->set_flashdata('failedlogin', 'Anda bukan admin');
+        redirect('loginadmin/logout');
+      }
+      # code...
+      $this->session->set_userdata($check);
+      redirect("admin");
     }
-    redirect("admin");
+  }
+
+  public function logout()
+  {
+    $this->session->unset_userdata('id');
+    $this->session->unset_userdata('uname');
+    $this->session->unset_userdata('pword');
+    redirect('Loginadmin');
   }
 }
 

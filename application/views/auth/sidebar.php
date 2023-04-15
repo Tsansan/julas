@@ -1,9 +1,10 @@
 <!-- Sidebar -->
 <div class="col-2 c-primary pt-5 px-0">
-    <div class="sidebar-button col py-2 <?php echo $retVal = ($this->uri->segment(1) == "" || $this->uri->segment(1) == "home") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("") ?>">Dashboard</a></div>
-    <div class="sidebar-button col py-2 <?php echo $retVal = ($this->uri->segment(1) == "jurnal") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("jurnal") ?>">Jurnal</a> </div>
-    <div class="sidebar-button col py-2  <?php echo $retVal = ($this->uri->segment(1) == "jadwal") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("jadwal") ?>"> Jadwal</a></div>
-    <div class="sidebar-button col py-2"><a href="#" data-bs-toggle="modal" data-bs-target="#Logoutmodal">Log out</a></div>
+    <div class="sidebar-button col py-2 <?php echo $retVal = ($this->uri->segment(1) == "" || $this->uri->segment(1) == "home") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("") ?>"><i class="fa-solid fa-gauge"></i><span class="sidebarTitle"> Dashboard</span></a></div>
+    <div class="sidebar-button col py-2 <?php echo $retVal = ($this->uri->segment(1) == "jurnal") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("jurnal") ?>"><i class="fa-solid fa-clipboard"></i> <span class="sidebarTitle"> Jurnal</span></a> </div>
+    <div class="sidebar-button col py-2 <?php echo $retVal = ($this->uri->segment(1) == "profil") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("profil") ?>"><i class="fa-solid fa-id-badge"></i> <span class="sidebarTitle"> My Profile</span></a> </div>
+    <div class="sidebar-button col py-2 <?php echo $retVal = ($this->uri->segment(1) == "akunku") ? "c-active" : "nactive"; ?>"><a href="<?php echo site_url("akunku") ?>"><i class="fa-solid fa-user-pen"></i> <span class="sidebarTitle"> Akun</span></a> </div>
+    <div class="sidebar-button col py-2"><a href="#" data-bs-toggle="modal" data-bs-target="#Logoutmodal"><i class="fa-solid fa-right-from-bracket"></i><span class="sidebarTitle"> Log out</span></a></div>
 
     <!-- Logout Modal -->
     <div class="modal fade" id="Logoutmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

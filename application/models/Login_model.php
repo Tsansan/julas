@@ -32,10 +32,10 @@ class Login_model extends CI_Model
   // ------------------------------------------------------------------------
   public function checkdata($uname, $pword)
   {
-    $query = "SELECT * FROM tb_user WHERE uname = '$uname' AND pword = '$pword' AND level = '1'";
+    $query = "SELECT * FROM tb_user WHERE uname = '$uname' AND pword = '$pword'";
     $data = $this->db->query($query)->row_array();
 
-    if ($uname != null && $pword != null) {
+    if ($data['uname'] != null && $data['pword'] != null) {
       $unamecheck = str_split($uname);
       $pwordcheck = str_split($pword);
       $datauname = str_split($data['uname']);
@@ -51,6 +51,8 @@ class Login_model extends CI_Model
           return false;
         }
       }
+    } else {
+      $data = null;
     }
 
     return $data;

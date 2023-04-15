@@ -1,42 +1,31 @@
 <!-- Main -->
 <div class="col container pt-4">
     <div class="col">
-        <p class="fs-2">Hallo, Selamat pagi User</p>
+        <p class="fs-2">Hallo, Selamat <?php echo $waktu . " " . $dataguru['nama'] ?></p>
     </div>
-    <div class="col">
+    <div class="col-md-5">
         <p class="fs-6">Apa saja jadwal Hari ini?</p>
         <div class="row">
-            <table class="table">
-                <thead class="c-third">
-                    <tr>
-                        <th class="col-1">No</th>
-                        <th class="col-2">Kelas</th>
-                        <th class="col-2">Jam Ke</th>
-                        <th class="col-4">Jurnal</th>
-                        <th class="col-3">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>9A</td>
-                        <td>1-2</td>
-                        <td>Anatomu tubuh</td>
-                        <td>
-                            <a href="#" class="btn c-second" data-bs-toggle="modal" data-bs-target="#exampleModal">Jurnal</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>9b</td>
-                        <td>3-4</td>
-                        <td>-</td>
-                        <td>
-                            <a href="#" class="btn c-second" data-bs-toggle="modal" data-bs-target="#exampleModal">Jurnal</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-responsive">
+                        <thead class="c-third">
+                            <tr>
+                                <th class="col-2">jamke</th>
+                                <th class="col-2">Kelas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($jadwalharian as $key) : ?>
+                                <tr>
+                                    <td><?php echo $key['jamke'] ?></td>
+                                    <td><?php echo $key['kelas'] ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

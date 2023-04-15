@@ -28,7 +28,7 @@ class Eror extends CI_Controller
 
   public function index()
   {
-    echo "ini eror bego";
+    echo "<h1>ini eror</h1>";
   }
 }
 

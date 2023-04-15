@@ -23,7 +23,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8080/julas/';
+// $config['base_url'] = 'http://localhost:8080/julas/';
+$config['base_url'] = 'https://julas.smpn2sidoharjo.sch.id/';
+// $config['base_url'] = 'http://192.168.1.24:8080/julas/';
+// $config['base_url'] = 'http://192.168.1.115:8080/julas/';
 
 /*
 |--------------------------------------------------------------------------

@@ -36,11 +36,12 @@ class Login extends CI_Controller
         // userdata from session check
         $user = $this->session->userdata('uname');
         $pword = $this->session->userdata('pword');
-        $userdata = $this->Login_model->checkdata($user, $pword);
         // check user data in database
-        if ($userdata) {
+        if ($user && $pword) {
+            $userdata = $this->Login_model->checkdata($user, $pword);
             redirect("home");
         }
+
 
         $this->form_validation->set_rules(
             'username',
