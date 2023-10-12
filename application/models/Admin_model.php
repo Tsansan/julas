@@ -80,11 +80,11 @@ class Admin_model extends CI_Model
   {
     if ($search == "") {
       $query = "SELECT * FROM tb_jurnal 
-      INNER JOIN tb_jadwal ON tb_jurnal.idjadwal = tb_jadwal.idjadwal
+      -- INNER JOIN tb_jadwal ON tb_jurnal.idjadwal = tb_jadwal.idjadwal
       INNER JOIN tb_bio ON tb_jurnal.idbio = tb_bio.idbio ORDER BY idjurnal DESC";
     } else {
       $query = "SELECT * FROM tb_jurnal 
-      INNER JOIN tb_jadwal ON tb_jurnal.idjadwal = tb_jadwal.idjadwal
+      -- INNER JOIN tb_jadwal ON tb_jurnal.idjadwal = tb_jadwal.idjadwal
       INNER JOIN tb_bio ON tb_jurnal.idbio = tb_bio.idbio
       WHERE tb_jurnal.kelas LIKE '%$search%' OR nama LIKE '%$search%' OR tanggal LIKE '%$search%' ORDER BY idjurnal DESC";
     }
@@ -96,12 +96,12 @@ class Admin_model extends CI_Model
   public function jurnalHariini($tanggal)
   {
     $query = "SELECT * FROM tb_jurnal 
-      INNER JOIN tb_jadwal ON tb_jurnal.idjadwal = tb_jadwal.idjadwal
-      INNER JOIN tb_bio ON tb_jadwal.idbio = tb_bio.idbio
+      -- INNER JOIN tb_jadwal ON tb_jurnal.idjadwal = tb_jadwal.idjadwal
+      INNER JOIN tb_bio ON tb_jurnal.idbio = tb_bio.idbio
       WHERE tanggal = '$tanggal'";
 
     $data = $this->db->query($query)->result_array();
-
+    
     $countdata = count($data);
 
     if ($countdata == null) {
